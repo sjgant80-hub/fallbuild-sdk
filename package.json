@@ -1,22 +1,24 @@
 {
   "name": "@ai-native-solutions/fallbuild-sdk",
   "version": "1.0.0",
-  "description": "Sovereign single-file low-code app builder — programmatic core. 8 widgets, 5 templates, standalone HTML export.",
-  "license": "MIT",
+  "description": "fallbuild SDK · sovereign single-file library extracted from fallbuild/index.html",
   "type": "module",
   "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
-  "files": ["src", "README.md", "LICENSE"],
-  "keywords": ["low-code", "app-builder", "sovereign", "single-file", "html-export", "ai-native-solutions"],
-  "author": "AI-Native Solutions <hello@ai-nativesolutions.com>",
-  "homepage": "https://sjgant80-hub.github.io/fallbuild-sdk/",
-  "repository": { "type": "git", "url": "https://github.com/sjgant80-hub/fallbuild-sdk.git" },
-  "bugs": { "url": "https://github.com/sjgant80-hub/fallbuild-sdk/issues" },
-  "engines": { "node": ">=18" },
+  "types": "src/index.d.ts",
+  "files": ["src", "docs", "README.md", "LICENSE"],
   "scripts": {
-    "smoke": "node -e \"import('./src/index.js').then(m=>{const a=m.applyTemplate('CRUD app');const html=m.renderStandaloneHtml(a);console.log('template:',a.name,'pages:',a.pages.length,'widgets:',a.pages.reduce((n,p)=>n+p.widgets.length,0),'html:',html.length,'bytes')})\""
+    "test": "node --test test/",
+    "smoke": "node examples/smoke.js"
   },
-  "publishConfig": { "access": "public" }
+  "keywords": ["fallbuild", "sdk", "sovereign", "ai-native-solutions"],
+  "author": "AI-Native Solutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjgant80-hub/fallbuild-sdk.git"
+  },
+  "homepage": "https://sjgant80-hub.github.io/fallbuild-sdk/",
+  "publishConfig": {
+    "access": "public"
+  }
 }
